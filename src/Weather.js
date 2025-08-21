@@ -8,7 +8,6 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
-    console.log(response.data.time);
 
     setWeatherData({
       ready: true,
@@ -48,7 +47,9 @@ export default function Weather(props) {
         </form>
         <h1>{weatherData.city}</h1>
         <ul>
-          <li><FormattedDate date={weatherData.date} /></li>
+          <li>
+            <FormattedDate date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row mt-3">
@@ -76,7 +77,6 @@ export default function Weather(props) {
     );
   } else {
     const apiKey = "0afcd2ao9bb24495ta6dd7a01113764b";
-    let city = "New York";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=imperial`;
 
     axios.get(apiUrl).then(handleResponse);
