@@ -20,7 +20,7 @@ function App() {
             </a>
             . It is open-sourced on{" "}
             <a
-              href="https://github.com/mrsmrobles"
+              href="https://github.com/mrsmrobles/react-weather"
               target="blank"
               rel="noreferrer noopener"
             >
