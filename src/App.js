@@ -14,7 +14,7 @@ function App() {
             <a
               href="https://www.linkedin.com/in/madison-robles-40155b235/"
               target="blank"
-              rel="noreferrer"
+              rel="noreferrer noopener"
             >
               Madison Robles
             </a>
@@ -22,12 +22,12 @@ function App() {
             <a
               href="https://github.com/mrsmrobles"
               target="blank"
-              rel="noreferrer"
+              rel="noreferrer noopener"
             >
               Github
             </a>{" "}
             and hosted on{" "}
-            <a href="app.netlify.com" target="blank" rel="noreferrer">
+            <a href="app.netlify.com" target="blank" rel="noreferrer noopener">
               Netlify
             </a>
             .

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function WeatherTemperature(props) {
-  const [unit, setUnit] = useState("metric");
+  const [unit, setUnit] = useState("imperial");
 
   function showImperial(event) {
     event.preventDefault();
@@ -12,28 +12,28 @@ export default function WeatherTemperature(props) {
     setUnit("metric");
   }
 
-  if (unit === "metric") {
+  if (unit === "imperial") {
     return (
       <div className="WeatherTemperature">
-        <span className="temperature">{Math.round(props.celsius)}</span>
+        <span className="temperature">{Math.round(props.fahrenheit)}</span>
         <span className="unit">
-          °C |{" "}
-          <a href="/" onClick={showImperial}>
-            °F
+          °F |{" "}
+          <a href="/" onClick={showMetric}>
+            °C
           </a>
         </span>
       </div>
     );
   } else {
-    let imperialTemperature = (props.celsius * 9/5) +32;
+    let metricTemperature = ((props.fahrenheit - 32) * (5 / 9));
     return (
       <div className="WeatherTemperature">
-        <span className="temperature">{Math.round(imperialTemperature)}</span>
+        <span className="temperature">{Math.round(metricTemperature)}</span>
         <span className="unit">
-          <a href="/" onClick={showMetric}>
-            °C
-          </a>{" "}
-          | °F
+          °C | <a href="/" onClick={showImperial}>
+            °F
+          </a>
+          
         </span>
       </div>
     );
