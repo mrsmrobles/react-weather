@@ -1,11 +1,11 @@
 .Weather {
   font-family: arial, sans-serif;
-  border: 1px solid #dadde1;
-  color: rgb(135, 135, 135);
+  border: 1px solid #27355c;
   padding: 16px;
-  border-radius: 6px;
   margin: 30px auto;
-  background-color: white;
+  background-color: #f2e6db;
+  box-shadow: rgba(57, 139, 141, 1) 10px 10px, rgba(57, 139, 141, 0.8) 20px 20px,
+    rgba(57, 139, 141, 0.6) 30px 30px, rgba(57, 139, 141, 0.4) 40px 40px;
 }
 
 .Weather form {
@@ -13,10 +13,12 @@
 }
 
 .Weather h1 {
+  color: #ea5048;
   font-size: 24px;
   font-weight: 100;
   line-height: 29px;
   margin: 20px 0 0 0;
+  font-weight: bold;
 }
 
 .Weather ul {
@@ -34,7 +36,7 @@
 .Weather img {
   height: 100px;
   width: 100px;
-  float:left;
+  float: left;
 }
 
 .Weather .temperature {
@@ -53,4 +55,41 @@
   position: relative;
   top: -34px;
   margin-left: 0px;
+}
+
+.button-74 {
+  background-color: #f0b357;
+  border: 2px solid #422800;
+  box-shadow: #3f5a4e 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-74:hover {
+  background-color: #fff;
+}
+
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+.Weather .search-bar {
+  border-radius: none;
+  width: 90%;
 }
