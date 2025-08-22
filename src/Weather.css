@@ -33,10 +33,12 @@
   list-style: none;
 }
 
-.Weather img {
-  height: 100px;
-  width: 100px;
+.Weather canvas {
   float: left;
+}
+.Weather #big-icon {
+  position: relative;
+  top: 18px;
 }
 
 .Weather .temperature {
@@ -45,6 +47,7 @@
   font-size: 64px;
   font-weight: 400;
   line-height: 100px;
+  padding-left: 10px;
 }
 
 .Weather .unit {
@@ -92,4 +95,8 @@
 .Weather .search-bar {
   border-radius: none;
   width: 90%;
+}
+
+.Weather .temperature {
+  color: #484848;
 }
