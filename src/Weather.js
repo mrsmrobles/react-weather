@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Weather.css";
-import WeatherInfo from "./WeatherInfo";
+import WeatherInfo from "./Weatherinfo";
 import WeatherForecast from "./WeatherForecast";
 import WeatherTemperature from "./WeatherTemperature";
 import WeatherIcon from "./WeatherIcon";
