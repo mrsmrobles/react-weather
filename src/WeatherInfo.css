@@ -1,19 +1,17 @@
 .WeatherInfo {
-    display: block;
+  display: inline-flex;
+  align-items: center;
 }
 .WeatherInfo h1 {
   color: #ea5048;
   font-size: 24px;
   font-weight: 100;
   line-height: 29px;
-  margin: 20px 0 0 0;
   font-weight: bold;
+  margin-bottom: 0;
+  margin-right: 20px;
 }
 
-.WeatherInfo ul {
-  margin: 0;
-  padding: 0;
-}
 
 .WeatherInfo li {
   font-size: 16px;

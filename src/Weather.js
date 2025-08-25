@@ -78,24 +78,38 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
+        <span className="row">
+          <div className="col left-group">
+            <WeatherIcon
+              className="big-icon"
+              code={weatherData.icon}
+              size={80}
+            />
+            <WeatherTemperature
+              className="temperature"
+              units={units}
+              temp={weatherData.temperature}
+            />
+          </div>
+          <div className="col unit">
+            <button href="/" onClick={showImperial}>
+              °F
+            </button>
+            <br />
+            <button href="/" onClick={showMetric}>
+              °C
+            </button>
+          </div>
+          <div className="col">
+            <WeatherInfo data={weatherData} units={units} degree={degree} />
+          </div>
+        </span>
+
         <span>
-          <WeatherIcon className="big-icon" code={weatherData.icon} size={64} />
-          <WeatherTemperature className="temperature"
+          <WeatherForecast
+            coordinates={weatherData.coordinates}
             units={units}
-            temp={weatherData.temperature}
           />
-          <WeatherInfo data={weatherData} units={units} degree={degree}/>
-        </span>
-        <span className="unit">
-          <button href="/" onClick={showImperial}>
-            °F
-          </button>
-          <button href="/" onClick={showMetric}>
-            °C
-          </button>
-        </span>
-        <span>
-          <WeatherForecast coordinates={weatherData.coordinates} units={units}/>
         </span>
       </div>
     );
