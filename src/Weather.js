@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Weather.css";
-import WeatherInfo from "./Weatherinfo";
+import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
+import WeatherTemperature from "./WeatherTemperature";
+import WeatherIcon from "./WeatherIcon";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const [degree, setDegree] = useState("F");
+  const [units, setUnits] = useState("imperial");
 
   function handleResponse(response) {
     setWeatherData({
@@ -40,6 +44,19 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
+  function showImperial(event) {
+    event.preventDefault();
+    setUnits("imperial");
+    setDegree("F");
+    search();
+  }
+  function showMetric(event) {
+    event.preventDefault();
+    setUnits("metric");
+    setDegree("C");
+    search();
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
@@ -61,8 +78,25 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <WeatherInfo data={weatherData} />
-        <WeatherForecast coordinates={weatherData.coordinates} />
+        <span>
+          <WeatherIcon className="big-icon" code={weatherData.icon} size={64} />
+          <WeatherTemperature className="temperature"
+            units={units}
+            temp={weatherData.temperature}
+          />
+          <WeatherInfo data={weatherData} units={units} degree={degree}/>
+        </span>
+        <span className="unit">
+          <button href="/" onClick={showImperial}>
+            °F
+          </button>
+          <button href="/" onClick={showMetric}>
+            °C
+          </button>
+        </span>
+        <span>
+          <WeatherForecast coordinates={weatherData.coordinates} units={units}/>
+        </span>
       </div>
     );
   } else {
